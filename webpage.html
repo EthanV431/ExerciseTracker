@@ -21,7 +21,7 @@
 
             <table class="border">
                 <tr>
-                    <td class="border"> key</td>
+                    <td class="border"> ID</td>
                     <td class="border">
                         name
                     </td>
@@ -40,7 +40,9 @@
 
             </table>
 
-
+            <label for="duration">Delete Exercise</label><br>
+            <label for="input_id">ID</label>
+            <input type="number" id="delete_exercise" name="delete_exercise" autocomplete="on">
 
         </div>
     </div>
@@ -56,23 +58,25 @@
 
         <form id="create">
             <label for="name1">Exercise Name:</label><br>
-            <input type="text" id="name1" name="name1" autocomplete="on"><br>
+            <input type="text" id="name1" name="name1" autocomplete="   on"><br>
 
             <label for="muscle_group">Muscle group: </label>
-            <select name="muscles">
+            <select name="muscles" id="muscles">
                 <option value="arms">Arms</option>
                 <option value="legs">Legs</option>
                 <option value="core">Core</option>
                 <option value="back">Back</option>
             </select>
+            <br><br>
 
-            <p>Duration Measurement:</p>
+            <label for="duration">Duration Measurement:</label><br>
             <label for="reps">Reps</label>
-            <input type="radio" id="reps" name="rep_time" autocomplete="on">
+            <input type="radio" id="reps" name="rep_time" autocomplete="off">
 
-            <label for="time">Time(seconds):</label>
-            <input type="radio" id="time" name="rep_time" autocomplete="on"><br>
-            <input type="number" id="rep_time" name="rep_time_input" autocomplete="on"><br>
+            <label for="time">Time(seconds)</label>
+            <input type="radio" id="time" name="rep_time" autocomplete="off"><br>
+
+            <input type="number" id="rep_time" name="rep_time_input" autocomplete="on"><br><br>
             <button type="submit">Submit</button>
         </form>
     </div>
