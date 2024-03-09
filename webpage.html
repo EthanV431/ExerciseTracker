@@ -21,6 +21,7 @@
 
             <table class="border">
                 <tr>
+                    <td class="border"> ID</td>
                     <td class="border">
                         name
                     </td>
@@ -47,7 +48,7 @@
     </div>
 
     <div id="right">
-            <!--
+        <!--
                 Name of Exercise
                 Target Muscle group
                 reps/time (category)
@@ -57,8 +58,8 @@
 
         <form id="create">
             <label for="name1">Exercise Name:</label><br>
-            <input type="text" id="name1" name="name1" autocomplete="on"><br>
-            
+            <input type="text" id="name1" name="name1" autocomplete="   on"><br>
+
             <label for="muscle_group">Muscle group: </label>
             <select name="muscles" id="muscles">
                 <option value="arms">Arms</option>
@@ -70,12 +71,13 @@
 
             <label for="duration">Duration Measurement:</label><br>
             <label for="reps">Reps</label>
-            <input type="radio" id="reps" name="rep_time" autocomplete="on">
+            <input type="radio" id="reps" name="rep_time" autocomplete="off">
 
             <label for="time">Time(seconds)</label>
-            <input type="radio" id="time" name="rep_time" autocomplete="on"><br>
+            <input type="radio" id="time" name="rep_time" autocomplete="off"><br>
+
             <input type="number" id="rep_time" name="rep_time_input" autocomplete="on"><br><br>
-            <button type="submit", id="add_button">Submit</button>
+            <button type="submit" , id="add_button">Submit</button>
         </form>
     </div>
 
