@@ -12,6 +12,8 @@
     }
 
 
+
+
 }
 
 
@@ -36,9 +38,20 @@
     margin-left: -10px;
     margin-right: -10px;
 
-    #title_words {
+
+    .x {
         position: absolute;
-        margin-left: 10px;
+        width: 50%;
+        left: 10px;
+    }
+
+    .y {
+        position: absolute;
+        width: 50%;
+        right: 0px;
+        text-align: right;
+        padding-right: 10px;
+
     }
 }
 
