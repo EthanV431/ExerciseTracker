@@ -11,10 +11,6 @@ function showAll() {
         console.log(Object.keys(ourData[0]))
         console.log(Object.values(ourData[0]))
 
-        let x = request.responseText.split(',');
-        console.log(x[1][0])
-        console.log(x.length)
-
         tbl = document.getElementById("text");
         console.log(tbl.rows.length)
         let size = tbl.rows.length;
@@ -29,10 +25,8 @@ function showAll() {
             const td2 = tr.insertCell();
             td.appendChild(document.createTextNode(Object.keys(ourData[y])))
             td2.appendChild(document.createTextNode(Object.values(ourData[y])))
-
             console.log(y)
         }
-
     };
     request.send();
     //console.log()
