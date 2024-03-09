@@ -1,0 +1,21 @@
+#left {
+    position: absolute;
+    background-color: brown;
+    margin-top: -10px;
+    height: 100%;
+    width: 30%;
+    left: 0px;
+
+
+}
+
+
+#right {
+    position: absolute;
+    background-color: white;
+    margin-top: -10px;
+    height: 100%;
+    width: 70%;
+    right: 0px;
+
+}
