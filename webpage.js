@@ -98,8 +98,6 @@ document.getElementById("create").addEventListener("submit", function (event) {
     body[names] = grade;
     xhttp.send(JSON.stringify(body));
 
-
-
 });
 document.getElementById("edit").addEventListener("submit", function (event) {
     event.preventDefault()
