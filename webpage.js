@@ -41,9 +41,14 @@ document.getElementById("create").addEventListener("submit", function (event) {
     let names = document.getElementById("name1").value;
     let muscleGroup = document.getElementById("muscles").value;
 
+    let reps = document.getElementById("reps").checked;
+    let time = document.getElementById("time").checked;
 
     console.log(names);
     console.log(muscleGroup)
+
+    console.log(reps)
+    console.log(time)
 
 
 
