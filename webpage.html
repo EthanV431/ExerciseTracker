@@ -41,23 +41,33 @@
     </div>
 
     <div id="right">
+            <!--
+                Name of Exercise
+                Target Muscle group
+                reps/time (category)
+            -->
 
         <h3> Input an Exercise! </h3>
 
         <form id="create">
             <label for="name1">Exercise Name:</label><br>
             <input type="text" id="name1" name="name1" autocomplete="on"><br>
-            <!--
-                Name of Exercise
-                Target Muscle group
-                reps/time (category)
-            -->
+            
+            <label for="muscle_group">Muscle group: </label>
+            <select name="muscles">
+                <option value="arms">Arms</option>
+                <option value="legs">Legs</option>
+                <option value="core">Core</option>
+                <option value="back">Back</option>
+              </select>
+
             <p>Duration Measurement:</p>
             <label for="reps">Reps</label>
-            <input type="radio" id="reps" name="reps" autocomplete="on">
+            <input type="radio" id="reps" name="rep_time" autocomplete="on">
+
             <label for="time">Time(seconds):</label>
-            <input type="radio" id="time" name="time" autocomplete="on"><br>
-            <input type="number" id="rep_time" name="rep_time" autocomplete="on"><br>
+            <input type="radio" id="time" name="rep_time" autocomplete="on"><br>
+            <input type="number" id="rep_time" name="rep_time_input" autocomplete="on"><br>
             <button type="submit">Submit</button>
         </form>
     </div>
