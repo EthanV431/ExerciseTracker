@@ -1,14 +1,16 @@
 #left {
     position: absolute;
     background-color: white;
-    margin-top: -10px;
+
     height: 100%;
     width: 50%;
     left: 0px;
+    margin-left: 15%;
 
     .border {
         border: 1px solid black;
     }
+
 
 }
 
@@ -16,11 +18,26 @@
 #right {
     position: absolute;
     background-color: white;
-    margin-top: -10px;
+
     height: 100%;
     width: 50%;
-    right: 0px;
+    left: 50%;
+
+    margin-left: 15%;
 
 
 
+}
+
+#title {
+    background-color: tan;
+    height: 80px;
+    margin-top: -25px;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    #title_words {
+        position: absolute;
+        margin-left: 10px;
+    }
 }
