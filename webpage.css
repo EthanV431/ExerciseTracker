@@ -1,12 +1,17 @@
 #left {
     position: absolute;
-    background-color: brown;
+    background-color: white;
     margin-top: -10px;
     height: 100%;
     width: 30%;
     left: 0px;
 
-
+    .border {
+        border-color: black;
+        border: 1px;
+        width: 100px;
+        height: 500px;
+    }
 }
 
 
