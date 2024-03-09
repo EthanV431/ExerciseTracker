@@ -11,7 +11,7 @@
 <body>
     <p> Hello World</p>
     <div id="left">
-        <p> Left side</p>
+        <h3> Current Exercises</h3>
 
         <div>
             <button onclick="showAll()">Show all Grades</button>
@@ -43,13 +43,18 @@
 
     <div id="right">
 
-        <p> right side</p>
+        <h3> Input an Exercise! </h3>
 
         <form id="create">
-            <label for="name1">Name:</label><br>
+            <label for="name1">Exercise Name:</label><br>
             <input type="text" id="name1" name="name1" autocomplete="on"><br>
-            <label for="grade">Grade:</label><br>
-            <input type="number" id="grade" name="grade" autocomplete="on"><br>
+            <!--
+                Name of Exercise
+                Target Muscle group
+                reps/time (category)
+            -->
+            <label for="reps_time">Duration Measurement:</label><br>
+            <input type="radio" id="reps_time" name="reps" autocomplete="on"><br>
             <button type="submit">submit</button>
         </form>
     </div>
