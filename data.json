@@ -1,1 +1,7 @@
-[{"George": "4"}, {"Steve": "3"}, {"Carl": "321"}, {"monet": "49"}, {"stacy": "51"}]
+[
+    {
+        "name": "test",
+        "muscleGroup": "brain",
+        "reps_time": "1"
+    }
+]
