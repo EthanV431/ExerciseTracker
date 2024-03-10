@@ -172,8 +172,9 @@ document.getElementById("create").addEventListener("submit", function (event) {
 document.getElementById("login").addEventListener("submit", function (event) {
   event.preventDefault()
 
-  let user = document.getElementById("username").value;
-  let pass = document.getElementById("password").value;
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let email = document.getElementById("email").value;
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredentials) => {
