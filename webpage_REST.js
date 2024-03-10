@@ -97,41 +97,23 @@ function showAll() {
 
         }
 
-        //console.log(typeof (ourData));
-        /*
-        let x = request.responseText.split(',');
-        console.log(x[1][0])
-        console.log(x.length)
-
-        tbl = document.getElementById("text");
-        console.log(tbl.rows.length)
-        let size = tbl.rows.length;
-        for (j = 0; j < size; j = j + 1) {
-            tbl.deleteRow(0);
-            console.log(j)
-        }
-        
-        console.log(ourData.length)
-        for (let i = 0; i < (x.length); i = i + 2) {
-            // console.log(ourData[i]);
-            //x.push(ourData[i].name);
-            //ocument.getElementById("text").innerHTML = x[0];
-            const tr = tbl.insertRow();
-            const td = tr.insertCell();
-            if (x[i][1] != "<" && x[i][0] != "{") {
-                td.appendChild(document.createTextNode(x[i]))
-            }
-
-            const td2 = tr.insertCell();
-            if (x[i + 1][1] != "<") {
-                td2.appendChild(document.createTextNode(x[i + 1]))
-            }
-        }
-        */
-        //console.log(ourData.name)
     };
     request.send();
     //console.log()
 
 }
+
+document.getElementById("delete").addEventListener("submit", function (event) {
+    event.preventDefault()
+    console.log("a");
+    let names = document.getElementById("delete_exercise").value;
+    let string = "https://jasony33.pythonanywhere.com/data/" + names;
+    console.log(names);
+    console.log(string);
+    var request = new XMLHttpRequest();
+    request.open('POST', string);
+    // console.log("a")
+    request.send();
+});
+
 
