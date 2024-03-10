@@ -43,139 +43,146 @@ const db = getFirestore(app);
 
 //==== FIREBASE AUTH ====
 export function createAccount(username, email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredentials) => {
-        updateProfile(userCredentials.user, { displayName: username });
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }
-  
-  export function signInUser(email, password) {
-    signInWithEmailAndPassword(auth, email, password).catch((error) => {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredentials) => {
+      updateProfile(userCredentials.user, { displayName: username });
+    })
+    .catch((error) => {
       alert(error);
     });
-  }
-  
-  export function signOutUser() {
-    signOut(auth).catch((error) => {
-      alert(error);
-    });
-  }
-  
-  export function updateOnAuthStateChanged(callback) {
-    onAuthStateChanged(auth, callback);
-  }
+}
+
+export function signInUser(email, password) {
+  signInWithEmailAndPassword(auth, email, password).catch((error) => {
+    alert(error);
+  });
+}
+
+export function signOutUser() {
+  signOut(auth).catch((error) => {
+    alert(error);
+  });
+}
+
+export function updateOnAuthStateChanged(callback) {
+  onAuthStateChanged(auth, callback);
+}
 
 //==== FIRESTORE ====
 export function dbAddComment(userID, username, comment) {
-    if (comment.trim() != '') {
-      addDoc(collection(db, 'comments'), {
-        comment: comment,
-        timestamp: Date.now(),
-        userID: userID,
-        username: username,
-      }).catch((error) => {
-        alert(error);
-      });
-    }
+  if (comment.trim() != '') {
+    addDoc(collection(db, 'comments'), {
+      comment: comment,
+      timestamp: Date.now(),
+      userID: userID,
+      username: username,
+    }).catch((error) => {
+      alert(error);
+    });
   }
-  
-  export function updateOnSnapshot(callback) {
-    const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
-    onSnapshot(q, callback);
-  }
+}
+
+export function updateOnSnapshot(callback) {
+  const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
+  onSnapshot(q, callback);
+}
 
 
 function showAll() {
-    //let x = "";
+  //let x = "";
 
-    /*
-    var request = new XMLHttpRequest();
-    request.open('GET', 'http://127.0.0.1:5000/grades');
+  /*
+  var request = new XMLHttpRequest();
+  request.open('GET', 'http://127.0.0.1:5000/grades');
 
-    request.onload = function () {
-        const ourData = JSON.parse(request.responseText);
+  request.onload = function () {
+      const ourData = JSON.parse(request.responseText);
 
-        console.log(Object.keys(ourData[0]))
-        console.log(Object.values(ourData[0]))
+      console.log(Object.keys(ourData[0]))
+      console.log(Object.values(ourData[0]))
 
-        tbl = document.getElementById("text");
-        console.log(tbl.rows.length)
-        let size = tbl.rows.length;
-        for (j = 0; j < size; j = j + 1) {
-            tbl.deleteRow(0);
-            console.log(j)
-        }
+      tbl = document.getElementById("text");
+      console.log(tbl.rows.length)
+      let size = tbl.rows.length;
+      for (j = 0; j < size; j = j + 1) {
+          tbl.deleteRow(0);
+          console.log(j)
+      }
 
-        for (y in ourData) {
-            const tr = tbl.insertRow();
-            const td = tr.insertCell();
-            const td2 = tr.insertCell();
-            td.appendChild(document.createTextNode(Object.keys(ourData[y])))
-            td2.appendChild(document.createTextNode(Object.values(ourData[y])))
-            console.log(y)
-        }
-    };
-    request.send();
-    //console.log()
-    */
+      for (y in ourData) {
+          const tr = tbl.insertRow();
+          const td = tr.insertCell();
+          const td2 = tr.insertCell();
+          td.appendChild(document.createTextNode(Object.keys(ourData[y])))
+          td2.appendChild(document.createTextNode(Object.values(ourData[y])))
+          console.log(y)
+      }
+  };
+  request.send();
+  //console.log()
+  */
 
 }
 
 export function createAccount(username, email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredentials) => {
-        updateProfile(userCredentials.user, { displayName: username });
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }
-  
-  export function signInUser(email, password) {
-    signInWithEmailAndPassword(auth, email, password).catch((error) => {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredentials) => {
+      updateProfile(userCredentials.user, { displayName: username });
+    })
+    .catch((error) => {
       alert(error);
     });
-  }
-  
-  export function signOutUser() {
-    signOut(auth).catch((error) => {
-      alert(error);
-    });
-  }
-  
-  export function updateOnAuthStateChanged(callback) {
-    onAuthStateChanged(auth, callback);
-  }
-  
+}
+
+export function signInUser(email, password) {
+  signInWithEmailAndPassword(auth, email, password).catch((error) => {
+    alert(error);
+  });
+}
+
+export function signOutUser() {
+  signOut(auth).catch((error) => {
+    alert(error);
+  });
+}
+
+export function updateOnAuthStateChanged(callback) {
+  onAuthStateChanged(auth, callback);
+}
+
 
 
 
 document.getElementById("create").addEventListener("submit", function (event) {
-    event.preventDefault()
+  event.preventDefault()
 
-    let names = document.getElementById("name1").value;
-    let muscleGroup = document.getElementById("muscles").value;
+  let names = document.getElementById("name1").value;
+  let muscleGroup = document.getElementById("muscles").value;
 
-    let reps = document.getElementById("reps").checked;
-    let time = document.getElementById("time").checked;
+  let reps = document.getElementById("reps").checked;
+  let time = document.getElementById("time").checked;
 
-    console.log(names);
-    console.log(muscleGroup)
+  console.log(names);
+  console.log(muscleGroup)
 
-    console.log(reps)
-    console.log(time)
+  console.log(reps)
+  console.log(time)
+});
+
+document.getElementById("login").addEventListener("submit", function (event) {
+  event.preventDefault()
+
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredentials) => {
+      updateProfile(userCredentials.user, { displayName: username });
+    })
+    .catch((error) => {
+      alert(error);
+    });
 
 
 
-    /*
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "http://127.0.0.1:5000/grades");
-    xhttp.setRequestHeader("Content-Type", "application/json");
-    let body = {};
-    body[names] = grade;
-    xhttp.send(JSON.stringify(body));
-    */
 });
