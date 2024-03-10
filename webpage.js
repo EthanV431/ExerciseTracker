@@ -17,7 +17,7 @@ const firebaseConfig = {
   measurementId: 'G-H1EMFSF19F',
 };
 
-import { initializeApp } from 'firebase/app';
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -124,31 +124,6 @@ function showAll() {
 
 }
 
-export function createAccount(username, email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredentials) => {
-      updateProfile(userCredentials.user, { displayName: username });
-    })
-    .catch((error) => {
-      alert(error);
-    });
-}
-
-export function signInUser(email, password) {
-  signInWithEmailAndPassword(auth, email, password).catch((error) => {
-    alert(error);
-  });
-}
-
-export function signOutUser() {
-  signOut(auth).catch((error) => {
-    alert(error);
-  });
-}
-
-export function updateOnAuthStateChanged(callback) {
-  onAuthStateChanged(auth, callback);
-}
 
 
 
