@@ -1,7 +1,8 @@
 [
     {
+        "id": "0",
         "name": "test",
         "muscleGroup": "brain",
-        "reps_time": "1"
+        "reps_time": "10 reps"
     }
 ]

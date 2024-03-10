@@ -87,8 +87,11 @@ export function dbAddComment(userID, username, comment) {
     onSnapshot(q, callback);
   }
 
+
 function showAll() {
     //let x = "";
+
+    /*
     var request = new XMLHttpRequest();
     request.open('GET', 'http://127.0.0.1:5000/grades');
 
@@ -117,6 +120,7 @@ function showAll() {
     };
     request.send();
     //console.log()
+    */
 
 }
 
