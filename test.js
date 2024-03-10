@@ -1,26 +1,40 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import {getFirestore,
+  ref,
+  collection,
+  onSnapshot,
+  query,
+  orderBy} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import {   getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDyUo-rtq3hCtKWKuYmDBa7b9AuU3N-Bpg",
+    authDomain: "fitnesstracker-5ccbd.firebaseapp.com",
+    projectId: "fitnesstracker-5ccbd",
+    storageBucket: "fitnesstracker-5ccbd.appspot.com",
+    messagingSenderId: "875614735189",
+    appId: "1:875614735189:web:97c10aa715c4a5289e7ddc"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
   // Initialize variables
-  const auth = firebase.auth()
-  const database = firebase.database()
+  const auth = getAuth(app)
+  const database = getFirestore(app)
   
   // Set up our register function
   function register () {
     // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-    full_name = document.getElementById('full_name').value
-    favourite_song = document.getElementById('favourite_song').value
-    milk_before_cereal = document.getElementById('milk_before_cereal').value
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
+    let full_name = document.getElementById('username').value
   
     // Validate input fields
     if (validate_email(email) == false || validate_password(password) == false) {
@@ -28,13 +42,13 @@ var firebaseConfig = {
       return
       // Don't continue running the code
     }
-    if (validate_field(full_name) == false || validate_field(favourite_song) == false || validate_field(milk_before_cereal) == false) {
+    if (validate_field(full_name) == false) {
       alert('One or More Extra Fields is Outta Line!!')
       return
     }
    
     // Move on with Auth
-    auth.createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
     .then(function() {
       // Declare user variable
       var user = auth.currentUser
@@ -46,8 +60,6 @@ var firebaseConfig = {
       var user_data = {
         email : email,
         full_name : full_name,
-        favourite_song : favourite_song,
-        milk_before_cereal : milk_before_cereal,
         last_login : Date.now()
       }
   
@@ -69,8 +81,8 @@ var firebaseConfig = {
   // Set up our login function
   function login () {
     // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
   
     // Validate input fields
     if (validate_email(email) == false || validate_password(password) == false) {
@@ -79,7 +91,7 @@ var firebaseConfig = {
       // Don't continue running the code
     }
   
-    auth.signInWithEmailAndPassword(email, password)
+    signInWithEmailAndPassword(auth, email, password)
     .then(function() {
       // Declare user variable
       var user = auth.currentUser
@@ -113,7 +125,7 @@ var firebaseConfig = {
   
   // Validate Functions
   function validate_email(email) {
-    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    let expression = /^[^@]+@\w+(\.\w+)+\w$/
     if (expression.test(email) == true) {
       // Email is good
       return true
@@ -143,3 +155,8 @@ var firebaseConfig = {
       return true
     }
   }
+
+var register_button = document.getElementById("register_button");
+var login_button = document.getElementById("login_button");
+register_button.addEventListener("click", register);
+login_button.addEventListener("click", login);
