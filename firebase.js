@@ -1,3 +1,4 @@
+//tutorial can be found here: https://complete-serpent-bd9.notion.site/Firebase-Auth-Firestore-503c37fa10244e74926626767a2bd3de
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
