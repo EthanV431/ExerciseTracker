@@ -1,21 +1,24 @@
-//tutorial can be found here: https://complete-serpent-bd9.notion.site/Firebase-Auth-Firestore-503c37fa10244e74926626767a2bd3de
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyBD5O_BPgpNKIAYj4xa94D4TJqLfuLVkqQ',
-  authDomain: 'fitnessdatabase-1292d.firebaseapp.com',
-  projectId: 'fitnessdatabase-1292d',
-  storageBucket: 'fitnessdatabase-1292d.appspot.com',
-  messagingSenderId: '122665824402',
-  appId: '1:122665824402:web:e86a6880b455bd7544f64b',
-  measurementId: 'G-H1EMFSF19F',
+  apiKey: "AIzaSyDyUo-rtq3hCtKWKuYmDBa7b9AuU3N-Bpg",
+  authDomain: "fitnesstracker-5ccbd.firebaseapp.com",
+  projectId: "fitnesstracker-5ccbd",
+  storageBucket: "fitnesstracker-5ccbd.appspot.com",
+  messagingSenderId: "875614735189",
+  appId: "1:875614735189:web:97c10aa715c4a5289e7ddc"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
 
 import { initializeApp } from 'firebase/app';
 import {
@@ -36,10 +39,6 @@ import {
 } from 'firebase/firestore';
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
 //==== FIREBASE AUTH ====
 export function createAccount(username, email, password) {
